@@ -41,12 +41,19 @@ export const ContextProvider = ({ children }) => {
       set(newUserRef, {
         ...item,
       });
+      setUserName("");
+      setPhoneNumber("");
+      setGender("");
     } else {
       update(ref(db, "Contact/" + storageUserData.id), {
         userName,
         phoneNumber,
         gender,
       });
+      setIsUpdate(false);
+      setUserName("");
+      setPhoneNumber("");
+      setGender("");
     }
   };
 
