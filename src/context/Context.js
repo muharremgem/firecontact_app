@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { ref, push, set } from "firebase/database";
+import { ref, push, set, onValue } from "firebase/database";
 import { db } from "../utils/firebase";
 
 export const Context = createContext();
@@ -37,6 +37,11 @@ export const ContextProvider = ({ children }) => {
       ...item,
     });
   };
+
+  useEffect(() => {
+    const userRef = ref(db, "Contact");
+    onValue()
+  }, []);
 
   return (
     <Context.Provider
