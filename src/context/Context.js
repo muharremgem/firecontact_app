@@ -41,7 +41,11 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     const userRef = ref(db, "Contact");
     onValue(userRef, (details) => {
-      console.log(details.val());
+      const data = details.val();
+      const contactArr = [];
+      for (let id in data) {
+        contactArr.push(id, ...data[id]);
+      }
     });
   }, []);
 
