@@ -19,13 +19,17 @@ export const ContextProvider = ({ children }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const newContact = {
-      userName,
-      phoneNumber,
-      gender,
-    };
-    setUserData([...userData, newContact]);
-    saveToDatabase(newContact);
+    if (!isUpdate) {
+      const newContact = {
+        userName,
+        phoneNumber,
+        gender,
+      };
+      setUserData([...userData, newContact]);
+      saveToDatabase(newContact);
+    } else {
+      saveToDatabase();
+    }
   };
 
   //Firebase
@@ -50,6 +54,15 @@ export const ContextProvider = ({ children }) => {
     });
   }, []);
 
+  //Update
+
+  const handleUpdate = (item) => {
+    setUserName(item.gender);
+    setPhoneNumber(item.phoneNumber);
+    setGender(item.gender);
+    setIsUpdate(true);
+  };
+
   //Delete
 
   const deleteDatabaseData = (item) => {
@@ -71,6 +84,7 @@ export const ContextProvider = ({ children }) => {
         setIsUpdate,
         handleFormSubmit,
         deleteDatabaseData,
+        handleUpdate,
       }}
     >
       {children}
