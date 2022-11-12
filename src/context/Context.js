@@ -40,7 +40,9 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     const userRef = ref(db, "Contact");
-    onValue()
+    onValue(userRef, (details) => {
+      console.log(details.val());
+    });
   }, []);
 
   return (
