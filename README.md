@@ -1,5 +1,52 @@
 # Getting Started with Create React App
 
+
+
+  Project Name       |Libraries and Technologies I use     |How does my project look   
+:-------------------------|-------------------------|-------------------------
+[Recipe_App](https://react-recipe-app-muharremgem.vercel.app/)| Js React Tailwind | ![Task Tracker](recipe.gif)
+
+
+
+I used;
+
+Firebase 
+
+Authentication
+
+useLocation
+
+useNavigate
+
+Components
+
+useState
+
+useEffect
+
+useNavigate
+
+axios
+
+import/export
+
+Props
+
+React Router Dom
+
+React Developer Tool
+
+React Icons
+
+Destructuring props
+
+array map method
+
+array some method
+
+TailwindCss
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
